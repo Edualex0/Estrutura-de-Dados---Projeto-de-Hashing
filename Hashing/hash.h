@@ -9,7 +9,7 @@ typedef struct no {
 } No;
 
 typedef struct tabelaHashing {
-    No* buckets[TAM_TABELA];
+    No* itens[TAM_TABELA];
     int tamanho;
     int totalUsuarios;
 } TabelaHash;
@@ -20,3 +20,7 @@ No* buscaHash(TabelaHash* tabela, char* username);
 int removeHash(TabelaHash* tabela, char* username);
 void liberaHash(TabelaHash* tabela);
 void imprimeHash(TabelaHash* tabela);
+
+int valorString(char str);
+//int metodo que a gente vai usar pra fazer a hashing
+int hashSenha(char senha);
