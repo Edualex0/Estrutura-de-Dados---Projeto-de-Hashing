@@ -17,3 +17,13 @@ TabelaHash* criaHash() {
     return tabela;
 }
 
+int valorString(char str[]){
+
+    int soma = 0;
+
+    for (int i = 0; str[i] != '\0'; i++){
+        soma = soma + str[i];
+    }
+
+    return soma;
+}

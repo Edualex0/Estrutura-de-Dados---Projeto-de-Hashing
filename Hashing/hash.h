@@ -21,6 +21,6 @@ int removeHash(TabelaHash* tabela, char* username);
 void liberaHash(TabelaHash* tabela);
 void imprimeHash(TabelaHash* tabela);
 
-int valorString(char str);
+int valorString(char str[]);
 int chaveDivisao(int cahve);
 int hashSenha(char senha);
