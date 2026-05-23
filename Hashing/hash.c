@@ -27,3 +27,12 @@ int valorString(char str[]){
 
     return soma;
 }
+
+int chaveDivisao(int chave){
+    return chave % TAM_TABELA;
+}
+
+int hashSenha(char senha[]){
+    return valorString(senha);
+}
+

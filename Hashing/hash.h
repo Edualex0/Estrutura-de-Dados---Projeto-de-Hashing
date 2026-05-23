@@ -22,5 +22,5 @@ void liberaHash(TabelaHash* tabela);
 void imprimeHash(TabelaHash* tabela);
 
 int valorString(char str[]);
-int chaveDivisao(int cahve);
-int hashSenha(char senha);
+int chaveDivisao(int chave);
+int hashSenha(char senha[]);
