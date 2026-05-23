@@ -14,7 +14,7 @@ typedef struct tabelaHashing {
     int totalUsuarios;
 } TabelaHash;
 
-TabelaHash* criaHash(int tamanho);
+TabelaHash* criaHash();
 int insereHash(TabelaHash* tabela, char* username, char* senha);
 No* buscaHash(TabelaHash* tabela, char* username);
 int removeHash(TabelaHash* tabela, char* username);
