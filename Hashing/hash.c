@@ -77,7 +77,41 @@ No* buscaHash(TabelaHash* tabela,char username[]) {
     return NULL;
 }
 
-int removeHash(TabelaHash* tabela, char username[]){}
+
+int removeHash(TabelaHash* tabela, char username[]) {
+
+    if (tabela != NULL) {
+
+        int posicao = chaveDivisao(valorString(username));
+
+        No* atual = tabela->itens[posicao];
+
+        No* anterior = NULL;
+
+        while (atual != NULL) {
+            if (strcmp(atual->username, username) == 0) {
+                if (anterior == NULL) {
+                    tabela->itens[posicao] = atual->prox;
+                } else {
+                    anterior->prox = atual->prox;
+                }
+
+                free(atual);
+
+                tabela->totalUsuarios--;
+
+                return 1;
+            }
+
+            anterior = atual;
+
+            atual = atual->prox;
+        }
+    }
+
+    return 0;
+}
+
 
 void imprimeHash(TabelaHash* tabela){
     if (tabela != NULL) {
