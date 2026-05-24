@@ -26,7 +26,7 @@ int main() {
         switch (opcao){
 
             case 1:
-                printf("Digite o nome de usuário: ");
+                printf("Digite o nome de usuário a ser cadastrado: ");
                 scanf("%s", username);  
                 printf("Digite a senha: ");
                 scanf("%s", senha);
@@ -37,6 +37,22 @@ int main() {
 
                 break;
 
+            case 2:
+                printf("Login de usuário: ");
+                scanf("%s", username);
+                printf("Digite a senha: ");
+                scanf("%s", senha);
+
+                No* usuario = buscaHash(tabela, username);
+
+                if(usuario != NULL && usuario->hashSenha == hashSenha(senha)){
+                    printf("Login bem-sucedido!\n");
+                } else {
+                    printf("Falha no login. Verifique o nome de usuário e a senha e tente novamente.\n");
+                }
+
+                break;
+            
             }
        
         } while (opcao != 0);
