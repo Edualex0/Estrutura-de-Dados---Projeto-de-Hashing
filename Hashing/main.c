@@ -20,7 +20,7 @@ int main() {
         printf("4 - Imprimir tabela\n");
         printf("0 - Sair\n");
 
-        printf("Escolha uma das opções: ");
+        printf("\nEscolha uma das opções: ");
         scanf("%d", &opcao);
 
         switch (opcao){
@@ -32,13 +32,13 @@ int main() {
                 scanf("%s", senha);
                 
                 if(insereHash(tabela, username, senha)){
-                    printf("Usuário cadastrado com sucesso!\n");
+                    printf("\nUsuário cadastrado com sucesso!\n");
                 }   
 
                 break;
 
             case 2:
-                printf("Login de usuário: ");
+                printf("\nLogin de usuário: ");
                 scanf("%s", username);
                 printf("Digite a senha: ");
                 scanf("%s", senha);
@@ -46,46 +46,36 @@ int main() {
                 No* usuario = buscaHash(tabela, username);
 
                 if(usuario != NULL && usuario->hashSenha == hashSenha(senha)){
-                    printf("Login bem-sucedido!\n");
+                    printf("\nLogin bem-sucedido!\n");
                 } else {
                     printf("Falha no login. Verifique o nome de usuário e a senha e tente novamente.\n");
                 }
 
                 break;
-                
-                
+                         
             case 3:
-
                 printf("Usuário a ser removido: ");
                 scanf("%s", username);
 
                 if (removeHash(tabela, username)) {
-                    printf("Usuario removido!\n");
+                    printf("\nUsuario removido!\n");
                 } else {
                     printf("Usuario não encontrado!\n");
                 }
 
                 break;
 
-            
             case 4:
-
                 imprimeHash(tabela);
 
                 break;
 
-            
             case 0:
-
                 printf("Encerrando...\n");
 
                 break;
             
             }
-
-            
-
-       
         } while (opcao != 0);
 
     liberaHash(tabela);
