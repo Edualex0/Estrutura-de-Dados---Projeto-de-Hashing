@@ -36,24 +36,25 @@ int hashSenha(char senha[]){
     return valorString(senha);
 }
 
-int insereHash(TabelaHash* tabela, char username[],char senha[]) {
+int insereHash(TabelaHash* tabela, char username[], char senha[]) {
 
-    if (tabela == NULL)
-        return 0;
+    if (tabela != NULL) {
+        int indice = chaveDivisao(valorString(username));
 
-    int indice =chaveDivisao(valorString(username));
+        No* novo = (No*) malloc(sizeof(No));
 
-    No* novo = (No*) malloc(sizeof(No));
+        if (novo != NULL) {
 
-    if (novo == NULL)
-        return 0;
+            strcpy(novo->username, username);
 
-    strcpy(novo->username, username);
-    novo->hashSenha = hashSenha(senha);
-    novo->prox = tabela->itens[indice];
-    tabela->itens[indice] = novo;
-    tabela->totalUsuarios++;
+            novo->hashSenha = hashSenha(senha);
+            novo->prox = tabela->itens[indice];
+            tabela->itens[indice] = novo;
+            tabela->totalUsuarios++;
 
-    return 1;
+            return 1;
+        }
+    }
+
+    return 0;
 }
-
