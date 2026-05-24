@@ -73,6 +73,13 @@ int main() {
                 imprimeHash(tabela);
 
                 break;
+
+            
+            case 0:
+
+                printf("Encerrando...\n");
+
+                break;
             
             }
 
