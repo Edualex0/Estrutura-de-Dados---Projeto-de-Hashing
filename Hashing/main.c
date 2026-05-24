@@ -11,7 +11,7 @@ int main() {
     char username[TAM_USERNAME];
     char senha[TAM_SENHA];
 
-     do {
+    do {
 
         printf("\nSISTEMA DE CADASTRO\n");
         printf("1 - Cadastrar usuario\n");
@@ -19,14 +19,31 @@ int main() {
         printf("3 - Remover usuario\n");
         printf("4 - Imprimir tabela\n");
         printf("0 - Sair\n");
- 
+
         printf("Escolha uma das opções: ");
         scanf("%d", &opcao);
 
-        // usar switch case para as funções anteriores
-     } while (opcao != 0);
+        switch (opcao){
 
-     liberaHash(tabela);
+            case 1:
+                printf("Digite o nome de usuário: ");
+                scanf("%s", username);  
+                printf("Digite a senha: ");
+                scanf("%s", senha);
+                
+                if(insereHash(tabela, username, senha)){
+                    printf("Usuário cadastrado com sucesso!\n");
+                }   
+
+                break;
+
+            }
+       
+        } while (opcao != 0);
+
+    liberaHash(tabela);
 
     return 0;
-}
+} 
+        
+       
