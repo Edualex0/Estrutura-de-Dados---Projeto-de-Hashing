@@ -1,4 +1,4 @@
-#define TAM_TABELA  11 // a decidir
+#define TAM_TABELA  11 
 #define TAM_USERNAME 30
 #define TAM_SENHA   30
 
