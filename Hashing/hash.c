@@ -58,3 +58,21 @@ int insereHash(TabelaHash* tabela, char username[], char senha[]) {
 
     return 0;
 }
+
+No* buscaHash(TabelaHash* tabela,char username[]) {
+
+    if (tabela != NULL){
+
+        int indice = chaveDivisao(valorString(username));
+
+        No* aux = tabela->itens[indice];
+
+        while (aux != NULL) {
+            if (strcmp(aux->username, username) == 0) {
+                return aux;
+            }
+            aux = aux->prox;
+        }
+    }
+    return NULL;
+}
