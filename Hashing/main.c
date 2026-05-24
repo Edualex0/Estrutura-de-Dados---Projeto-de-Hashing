@@ -54,13 +54,13 @@ int main() {
                 break;
                          
             case 3:
-                printf("Usuário a ser removido: ");
+                printf("\nUsuário a ser removido: ");
                 scanf("%s", username);
 
                 if (removeHash(tabela, username)) {
                     printf("\nUsuario removido!\n");
                 } else {
-                    printf("Usuario não encontrado!\n");
+                    printf("\nUsuario não encontrado!\n");
                 }
 
                 break;
