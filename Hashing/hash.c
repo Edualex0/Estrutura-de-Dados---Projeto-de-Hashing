@@ -76,3 +76,21 @@ No* buscaHash(TabelaHash* tabela,char username[]) {
     }
     return NULL;
 }
+
+void liberaHash(TabelaHash* tabela) {
+
+    if (tabela != NULL) {
+        for (int i = 0; i < TAM_TABELA; i++) {
+            No* aux = tabela->itens[i];
+
+            while (aux != NULL) {
+                No* temp = aux;
+                aux = aux->prox;
+
+                free(temp);
+            }
+        }
+
+        free(tabela);
+    }
+}
