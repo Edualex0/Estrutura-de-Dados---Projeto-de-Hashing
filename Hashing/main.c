@@ -66,8 +66,17 @@ int main() {
                 }
 
                 break;
+
+            
+            case 4:
+
+                imprimeHash(tabela);
+
+                break;
             
             }
+
+            
 
        
         } while (opcao != 0);
