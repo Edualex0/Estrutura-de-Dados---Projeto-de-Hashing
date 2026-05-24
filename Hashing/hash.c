@@ -77,6 +77,42 @@ No* buscaHash(TabelaHash* tabela,char username[]) {
     return NULL;
 }
 
+int removeHash(TabelaHash* tabela, char username[]){}
+
+void imprimeHash(TabelaHash* tabela){
+    if (tabela != NULL) {
+
+        printf("\nTABELA HASH\n");
+        printf("Tamanho da tabela: %d\n", tabela->tamanho);
+        printf("Quantidade de Usuários cadastrados: %d\n", tabela->totalUsuarios);
+
+        for (int i = 0; i < TAM_TABELA; i++) {
+
+            printf("\nPosição %d:\n", i);
+
+            No* aux = tabela->itens[i];
+
+            if (aux == NULL) {
+                printf("Vazio\n");
+            }
+
+            while (aux != NULL) {
+
+                printf("Usuário: %s\n", aux->username);
+                printf("Hash da senha: %ld\n", aux->hashSenha);
+                printf("\n|\n");
+                printf("v\n\n");
+
+                aux = aux->prox;
+            }
+
+            printf("NULL\n");
+            printf("--------------------------------------------------\n");
+        }
+    }
+}
+
+
 void liberaHash(TabelaHash* tabela) {
 
     if (tabela != NULL) {
